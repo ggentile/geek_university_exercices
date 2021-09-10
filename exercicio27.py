@@ -10,7 +10,8 @@ entries = list(map(int, input().split()))
 matrix = np.array(entries).reshape(r, c)
 print(matrix)
 
-value = max(matrix)
-[(index, row.index(value)) for index, row in enumerate(matrix) if value in row]
+value = matrix.max()
+
+[(index, np.where(value)) for index, row in enumerate(matrix) if value in row]
 print(value)
 # verificar erro de conseguir pegar o maior valor dentro da matrix na linha 13
